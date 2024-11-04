@@ -1,0 +1,53 @@
+#!/bin/bash
+
+select variable in alal dulal rahim karim
+do
+	case $variable in
+	alal ) 		
+		echo Alal 
+	;;
+	dulal ) 		
+		echo Dulal 
+	;;
+	rahim ) 	
+		echo Rahim 
+	;;
+	* )
+		echo Default
+	;;
+	esac
+done
+
+********************************************************
+#!/bin/bash
+
+a=0 
+until [ $a -ge 10 ] 
+do 
+    echo $a 
+    a=`expr $a + 1`
+done
+
+********************************************************
+#!/bin/bash
+
+for (( i=1; i<10; i++ ))
+do
+    if [ $i -gt 5 ]
+    then
+        break
+    fi
+    echo "$i"
+done
+
+*********************************************************
+#!/bin/bash
+
+for (( i=1; i<=10; i++ ))
+do
+    if [ $i = 8 ]
+    then
+        continue
+    fi
+    echo "$i"
+done

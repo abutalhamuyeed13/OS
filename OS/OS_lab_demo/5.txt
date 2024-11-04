@@ -1,0 +1,97 @@
+#!/bin/bash
+
+os=('ubuntu' 'windows' 'linux')
+
+# Print the elements of the array
+echo "${os[0]}"
+echo "${os[1]}"
+echo "${os[2]}"
+
+echo "${#os[@]}"
+unset os[2]
+echo "${#os[@]}"
+
+***********************************************
+
+#!/bin/bash
+
+echo "Enter the operating systems:"
+read -a os
+
+# Print the elements of the array
+echo "You entered:"
+for item in "${os[@]}"; do
+    echo "$item"
+done
+
+****************************************************
+
+#!/bin/bash
+
+while read filecontent
+do
+	echo $filecontent
+done < title
+
+****************************************************
+
+filename="title"
+if [ -f "$filename" ]
+then
+    echo "File exists"
+else
+    echo "File does not exist"
+fi
+
+****************************************************
+
+#! /bin/bash
+myfunction()
+{
+echo "First argument is as $1"
+echo "Second argument is as $2"
+}
+myfunction "Hello" "World"
+
+
+*************************************
+
+#!/bin/bash
+
+# Function for addition
+addition() {
+    local result=$(($1 + $2))
+    echo "Result of addition: $result"
+}
+
+# Function for subtraction
+subtraction() {
+    local result=$(($1 - $2))
+    echo "Result of subtraction: $result"
+}
+
+# Function for multiplication
+multiplication() {
+    local result=$(($1 * $2))
+    echo "Result of multiplication: $result"
+}
+
+# Function for division
+division() {
+    if [ $2 -eq 0 ]; then
+        echo "Error: Division by zero!"
+    else
+        local result=$(($1 / $2))
+        echo "Result of division: $result"
+    fi
+}
+
+# Main program
+echo "Enter two numbers:"
+read num1 num2
+
+# Call each function with the provided numbers
+addition $num1 $num2
+subtraction $num1 $num2
+multiplication $num1 $num2
+division $num1 $num2
